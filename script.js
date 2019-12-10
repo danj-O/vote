@@ -5,39 +5,53 @@ const peopleBox = document.getElementById("peoplebox"); //ppl box
 const people = document.getElementById("people");
 
 const voteBox = document.getElementById("votebox"); // box for voting
-const choiceInput = document.getElementById("choiceinput");
 
+const addChoiceBox = document.getElementById("addchoicebox"); //add choice button
 const continueBtn = document.getElementById("continueBtn");
 
+let choiceInput; //newly created inputs for vote options
+let choiceButton; //newly created buttons
+let addCount = 0;
+
+//adds inputs for vote choices
+const addChoice = () => {
+    addCount++;
+    choiceInput = document.createElement("input");
+    choiceInput.classname = "choices";
+    choiceInput.id = "choiceinput"+addCount;
+    choiceInput.placeholder = "enter an input";
+    voteBox.appendChild(choiceInput);
+}
+
+// the continue button function
 const enter = () => {
     const x = title.value;
     titleBox.innerHTML = x;
 
     const q = people.value;  // q is how many ppl playing
-    peopleBox.innerHTML = q + " People";
-    console.log(q);
+    peopleBox.innerHTML = q + " Debaters";
 
-    const y = choiceInput.value;
-    voteBox.innerHTML = y;
+    for (let i = 1; i <= addCount; i++) {
+        const choiceButton = document.createElement('button');
+        const inputLoopVal = 'choiceInput' + i;
+        const inputVal = document.getElementById(`inputLoopVal${i}`)
+        console.log(choiceInput.value);
+        choiceButton.innerHTML = choiceInput.value;
+        choiceButton.id = `choicebutton`+ i;
+        voteBox.appendChild(choiceButton);
 
+    }
+    addChoiceBox.remove();
     continueBtn.remove();
-
 }
-
-
 
 
 const enter2 = () => {
 
 }
-const addChoice = () => {
-    const newChoice = document.createElement("input");
-
-    voteBox.appendChild(newChoice);
-
-}
 
 
+// create a button and put the input value on it 
 
 // for (let i = 0; i < q; i++){
 //     console.log("yep");
