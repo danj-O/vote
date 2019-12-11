@@ -17,7 +17,7 @@ let choiceButton; //newly created buttons
 let addCount = 0;
 let peopleCount; //amt of vote options chosen
 let voteCount;
-let voteChosen; // option button pressed
+let voteChosen; // option button pressed's id
 
 //adds inputs for vote choices
 const addChoice = () => {
@@ -79,7 +79,6 @@ const voteClick = (e) => {
             } else if (voteChosen.includes(4)){
                 fourthOption++;  
             } 
-            // console.log(finalArr);
         } else {        
                     //getting the winner!!!!
             const finalArr = [firstOption, secondOption, thirdOption, fourthOption]
@@ -93,10 +92,8 @@ const voteClick = (e) => {
 }
 // TO DOOOO!!!!! --------> if the voteleft = 0, stop stuff from working, like the alert
 const resultsClick = () => {
-    console.log(voteChosen);
     const winner = document.getElementById(`${voteChosen}`);
     const winnerest = winner.value;
-    console.log(winnerest);
     peopleBox.remove();
     votesLeft.innerHTML = `The winner is : ${winnerest}!!`;
 }
