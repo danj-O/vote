@@ -2,3 +2,12 @@ body {
     color: white;
     background-color: rgb(138, 96, 7);
 }
+#app {
+    background: rgb(1, 93, 155);
+}
+#header {
+    background: rgb(80, 45, 1);
+}
+#inputstuff {
+    background: rgb(7, 139, 128);
+}
