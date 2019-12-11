@@ -10,10 +10,13 @@ const voteBox = document.getElementById("votebox");
 const addChoiceBox = document.getElementById("addchoicebox"); //add choice button
 const continueBtn = document.getElementById("continueBtn");
 
+const votesLeft = document.getElementById("votesleft");
+
 let choiceInput; //newly created inputs for vote options
 let choiceButton; //newly created buttons
 let addCount = 0;
 let peopleCount; //amt of vote options chosen
+let voteCount;
 
 //adds inputs for vote choices
 const addChoice = () => {
@@ -32,7 +35,7 @@ const enter = () => {
 
     //takes amt of ppl and makes it viewable
     const peopleCount = people.value;
-    peopleBox.innerHTML = peopleCount + " Debaters";
+    peopleBox.innerHTML = "Debaters " + peopleCount;
 
     //takes input and puts on buttons
     for (let i = 1; i <= addCount; i++) {
@@ -48,37 +51,15 @@ const enter = () => {
     addChoiceBox.remove();
     continueBtn.remove();
 
-    //next screen with 
-    // const voteCount = document.createElement("div");
-    // titleBox.appendChild(votecount);
-    const voteCount = document.createTextNode(`Votes Left : ${peopleCount}`)
-    titleBox.appendChild(voteCount);
+    // Votes left 
+    // voteCountBox = document.createElement("div");
+    // titleBox.appendChild(voteCountBox);
+    voteCount = document.createTextNode(`Votes Left : ${peopleCount}`)
+    votesLeft.appendChild(voteCount);
 }
 
 
-const enter2 = () => {
+
+const voteClick = () => {
     console.log("yep");
 }
-
-
-// create a button and put the input value on it 
-
-// for (let i = 0; i < q; i++){
-//     console.log("yep");
-//     const newInput = document.createElement("input");
-//     newInput.placeholder = "write a choice here";
-//     answerBox.appendChild(newInput);
-// }
-
-// document.createElement("answerbox").innerHTML = `
-// <input type="text" class="vote_choices" placeholder="option">`;
-
-
-//     document.getElementById("answerbox").innerHTML = `
-//         <input type="text" class="vote_choices" placeholder="option 1">
-//         <input type="text" class="vote_choices" placeholder="option 1">
-//         <input type="text" class="vote_choices" placeholder="option 1">
-//         <input type="text" class="vote_choices" placeholder="option 1">
-//     `
-// }
-
