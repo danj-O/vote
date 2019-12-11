@@ -62,6 +62,7 @@ let firstOption=0;
 let secondOption=0;
 let thirdOption=0;
 let fourthOption=0;
+let winningNumberOfVotes=0;
 
 //click the option buttons
 const voteClick = (e) => {
@@ -69,10 +70,10 @@ const voteClick = (e) => {
         // debugger;
         voteChosen = e.target.id;
         // peopleCount--;
-        if (peopleCount === 0){
-            console.log(peopleCount);
-            votesLeft.innerHTML = `The votes are in! <button>Click to see results!</button`;
-        }
+        // if (peopleCount === 0){
+        //     // console.log(peopleCount);
+        //     votesLeft.innerHTML = `The votes are in! <button>Click to see results!</button`;
+        // }
         if (peopleCount > 1){
             votesLeft.innerHTML = `Votes Left : ${peopleCount - 1}`;
                 //adding votes to their given counters
@@ -89,14 +90,55 @@ const voteClick = (e) => {
         } else {        
                     //getting the winner!!!!
             const finalArr = [firstOption, secondOption, thirdOption, fourthOption]
-            console.log(finalArr);
-            const winningNumberOfVotes = finalArr.indexOf(Math.max(firstOption, secondOption, thirdOption, fourthOption));
-            votesLeft.innerHTML = `Winner ${winningNumberOfVotes + 1}`;
+            // console.log(finalArr);
+            winningNumberOfVotes = finalArr.indexOf(Math.max(firstOption, secondOption, thirdOption, fourthOption));
+            votesLeft.innerHTML = `<button onclick= "resultsClick()">Click here to see results!</button>`;
+            // votesLeft.innerHTML = `Winner ${winningNumberOfVotes + 1}`;
         } 
+        // console.log(winningNumberOfVotes);
         peopleCount--;
         // console.log(peopleCount);
-        console.log(firstOption, secondOption, thirdOption, fourthOption);
+        // console.log(firstOption, secondOption, thirdOption, fourthOption);
         // alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
     }
 }
 // TO DOOOO!!!!! --------> if the voteleft = 0, stop stuff from working, like the alert
+const resultsClick = () => {
+    console.log(voteChosen);
+    // document.getElementById(voteChosen).value;
+    console.log(voteChosen.valueOf());
+    const winner = document.getElementById(voteChosen);
+    console.log(document.getElementById(voteChosen).value);
+    // console.log(winningNumberOfVotes);
+    // // const winner = winningNumberOfVotes.value
+    // if (voteChosen.includes(winningNumberOfVotes)){
+    //     const winner = `choicebutton` + winningNumberOfVotes;
+    //     votesLeft.innerHTML = `Winner ${winner.value}`;
+    // }
+}
+
+
+
+
+
+
+
+// function removeDuplicate(arr) {        
+//     var c;        
+//     var len = arr.length;        
+//     var result = [];        
+//     var obj = {};                
+//     for (c = 0; c<len; c++)  {            
+//        obj[arr[c]] = 0;        
+//     }  
+//     for (c in obj) {            
+//        result.push(c);        
+//     }            
+//     return result;      
+//  }              
+//  var myArr = [10, 20, 30, 40, 10, 40, 70, 80, 70, 90];      
+//  document.write(removeDuplicate(myArr));  
+
+// //loops through array asking if a number is higher than i, if it is, i = that number
+// i = 0 //counter for highest
+//  if i >
