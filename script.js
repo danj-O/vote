@@ -17,6 +17,7 @@ let choiceButton; //newly created buttons
 let addCount = 0;
 let peopleCount; //amt of vote options chosen
 let voteCount;
+let voteChosen; //maybe dont need
 
 //adds inputs for vote choices
 const addChoice = () => {
@@ -34,7 +35,7 @@ const enter = () => {
     titleBox.innerHTML = x;
 
     //takes amt of ppl and makes it viewable
-    const peopleCount = people.value;
+    peopleCount = people.value;
     peopleBox.innerHTML = "Debaters " + peopleCount;
 
     //takes input and puts on buttons
@@ -45,21 +46,36 @@ const enter = () => {
         // console.log(inputVal);
         choiceButton.innerHTML = inputVal.value;
         choiceButton.id = `choicebutton`+ i;
+        choiceButton.onclick = voteClick;
         voteBox.appendChild(choiceButton);
     }
     inputBox.remove();
     addChoiceBox.remove();
     continueBtn.remove();
 
-    // Votes left 
-    // voteCountBox = document.createElement("div");
-    // titleBox.appendChild(voteCountBox);
+    // Votes left counter init
     voteCount = document.createTextNode(`Votes Left : ${peopleCount}`)
     votesLeft.appendChild(voteCount);
 }
 
+// HOW TO GET EACH BUTTON PRESSED TO COUNT DOWN VOTES LEFT AND ADD A NUMBER TO AN ARRAY. ADD TO SEPARATE ARRAYS THEN EVAL? ALL IN ONE THEN EVAL?
 
-
-const voteClick = () => {
-    console.log("yep");
+const voteClick = (e) => {
+    // console.log(peopleCount);
+    if (e.target.tagName == 'BUTTON') {
+        voteChosen = e.target.id;
+        console.log(voteChosen);
+        peopleCount--;
+        console.log(peopleCount);
+        if (peopleCount >= 1){
+            votesLeft.innerHTML = "Votes Left : " + peopleCount;
+        } else {
+            votesLeft.innerHTML = `The winner is you!`;
+        } 
+        if (voteChosen.includes(1)){
+            
+        } 
+    
+    }
+    // console.log(voteChosen);  
 }
