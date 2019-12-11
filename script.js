@@ -58,24 +58,36 @@ const enter = () => {
     votesLeft.appendChild(voteCount);
 }
 
-// HOW TO GET EACH BUTTON PRESSED TO COUNT DOWN VOTES LEFT AND ADD A NUMBER TO AN ARRAY. ADD TO SEPARATE ARRAYS THEN EVAL? ALL IN ONE THEN EVAL?
+let firstOption=0;
+let secondOption=0;
+let thirdOption=0;
+let fourthOption=0;
 
+//click the option buttons
 const voteClick = (e) => {
-    // console.log(peopleCount);
     if (e.target.tagName == 'BUTTON') {
         voteChosen = e.target.id;
-        console.log(voteChosen);
         peopleCount--;
-        console.log(peopleCount);
         if (peopleCount >= 1){
             votesLeft.innerHTML = "Votes Left : " + peopleCount;
-        } else {
-            votesLeft.innerHTML = `The winner is you!`;
+        } else {        
+                    //getting the winner!!!!
+            const finalArr = [firstOption, secondOption, thirdOption, fourthOption]
+            console.log(finalArr);
+            const winningNumberOfVotes = finalArr.indexOf(Math.max(firstOption, secondOption, thirdOption, fourthOption));
+            votesLeft.innerHTML = `Winner ${winningNumberOfVotes + 1}`;
         } 
+        
+        //adding votes to their given counters
         if (voteChosen.includes(1)){
-            
+            firstOption++;  
+        } else if (voteChosen.includes(2)){
+            secondOption++;  
+        } else if (voteChosen.includes(3)){
+            thirdOption++;  
+        } else if (voteChosen.includes(4)){
+            fourthOption++;  
         } 
-    
+        alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
     }
-    // console.log(voteChosen);  
 }
