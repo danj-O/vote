@@ -66,10 +66,24 @@ let fourthOption=0;
 //click the option buttons
 const voteClick = (e) => {
     if (e.target.tagName == 'BUTTON') {
+        // debugger;
         voteChosen = e.target.id;
-        peopleCount--;
+        // peopleCount--;
         if (peopleCount >= 1){
-            votesLeft.innerHTML = "Votes Left : " + peopleCount;
+            votesLeft.innerHTML = `Votes Left : ${peopleCount - 1}`;
+                //adding votes to their given counters
+            if (voteChosen.includes(1)){
+                firstOption++;  
+            } else if (voteChosen.includes(2)){
+                secondOption++;  
+            } else if (voteChosen.includes(3)){
+                thirdOption++;  
+            } else if (voteChosen.includes(4)){
+                fourthOption++;  
+            } else if (peopleCount == 0){
+                votesLeft.innerHTML = `The votes are in! <button></button`;
+            }
+            // console.log(finalArr);
         } else {        
                     //getting the winner!!!!
             const finalArr = [firstOption, secondOption, thirdOption, fourthOption]
@@ -77,17 +91,9 @@ const voteClick = (e) => {
             const winningNumberOfVotes = finalArr.indexOf(Math.max(firstOption, secondOption, thirdOption, fourthOption));
             votesLeft.innerHTML = `Winner ${winningNumberOfVotes + 1}`;
         } 
-        
-        //adding votes to their given counters
-        if (voteChosen.includes(1)){
-            firstOption++;  
-        } else if (voteChosen.includes(2)){
-            secondOption++;  
-        } else if (voteChosen.includes(3)){
-            thirdOption++;  
-        } else if (voteChosen.includes(4)){
-            fourthOption++;  
-        } 
+        peopleCount--;
+        console.log(peopleCount);
+        console.log(firstOption, secondOption, thirdOption, fourthOption);
         // alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
     }
 }
