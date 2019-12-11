@@ -13,6 +13,7 @@ const continueBtn = document.getElementById("continueBtn");
 let choiceInput; //newly created inputs for vote options
 let choiceButton; //newly created buttons
 let addCount = 0;
+let peopleCount; //amt of vote options chosen
 
 //adds inputs for vote choices
 const addChoice = () => {
@@ -29,9 +30,11 @@ const enter = () => {
     const x = title.value;
     titleBox.innerHTML = x;
 
-    const q = people.value;  // q is how many ppl playing
-    peopleBox.innerHTML = q + " Debaters";
+    //takes amt of ppl and makes it viewable
+    const peopleCount = people.value;
+    peopleBox.innerHTML = peopleCount + " Debaters";
 
+    //takes input and puts on buttons
     for (let i = 1; i <= addCount; i++) {
         const choiceButton = document.createElement('button');
         // const inputLoopVal = 'choiceInput' + i;
@@ -40,11 +43,16 @@ const enter = () => {
         choiceButton.innerHTML = inputVal.value;
         choiceButton.id = `choicebutton`+ i;
         voteBox.appendChild(choiceButton);
-        continueBtn.onclick = enter2();
     }
     inputBox.remove();
     addChoiceBox.remove();
-    // continueBtn.remove();
+    continueBtn.remove();
+
+    //next screen with 
+    // const voteCount = document.createElement("div");
+    // titleBox.appendChild(votecount);
+    const voteCount = document.createTextNode(`Votes Left : ${peopleCount}`)
+    titleBox.appendChild(voteCount);
 }
 
 

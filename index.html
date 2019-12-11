@@ -8,7 +8,11 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 <body>
-
+    <div>
+        <h1>
+            Vote on it!
+        </h1>
+    </div>
 
     <div id="titlebox">
         <input type="text" id="title" placeholder="What's the debate?">
@@ -17,16 +21,21 @@
     <div id="peoplebox">
         <input type="number" id="people" placeholder="How many folks?">
     </div>
+    <div id = "votesleft">
+     </div>
     <div id = "inputbox">
     </div>
     <div id = "votebox">
     </div>
 
     <div id="addchoicebox">
-        <button onclick="addChoice()"> Add a vote choice</button>
+        <button onclick="addChoice()"> Add a vote choice</button> <br>
+        <p>
+            Add as many as y'all need then press continue.
+        </p> 
     </div>
     <div>
-        <button onclick="enter()" id="continueBtn" class="choices"> Continue</button>
+        <button onclick="enter()" id="continueBtn"> Continue</button>
     </div>
 
 
