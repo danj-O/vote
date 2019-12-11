@@ -42,7 +42,7 @@ const enter = () => {
     for (let i = 1; i <= addCount; i++) {
         const choiceButton = document.createElement('button');
         // const inputLoopVal = 'choiceInput' + i;
-        const inputVal = document.getElementById(`choiceinput${i}`)
+        const inputVal = document.getElementById(`choiceinput${i}`);
         // console.log(inputVal);
         choiceButton.innerHTML = inputVal.value;
         choiceButton.id = `choicebutton`+ i;
@@ -106,16 +106,17 @@ const voteClick = (e) => {
 const resultsClick = () => {
     console.log(voteChosen);
     // document.getElementById(voteChosen).value;
-    console.log(voteChosen.valueOf());
-    const winner = document.getElementById(voteChosen);
-    console.log(document.getElementById(voteChosen).value);
+    // document.getElementById(`choicebutton${voteChosen}`);
+    const winner = document.getElementById(`${voteChosen}`);
+    const winnerrr = winner.value;
+    console.log(winnerrr);
     // console.log(winningNumberOfVotes);
     // // const winner = winningNumberOfVotes.value
     // if (voteChosen.includes(winningNumberOfVotes)){
     //     const winner = `choicebutton` + winningNumberOfVotes;
     //     votesLeft.innerHTML = `Winner ${winner.value}`;
     // }
-}
+}button
 
 
 
