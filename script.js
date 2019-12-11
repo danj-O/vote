@@ -4,7 +4,8 @@ const title = document.getElementById("title");
 const peopleBox = document.getElementById("peoplebox"); //ppl box
 const people = document.getElementById("people");
 
-const voteBox = document.getElementById("votebox"); // box for voting
+const inputBox = document.getElementById("inputbox"); // box for voting
+const voteBox = document.getElementById("votebox");
 
 const addChoiceBox = document.getElementById("addchoicebox"); //add choice button
 const continueBtn = document.getElementById("continueBtn");
@@ -20,7 +21,7 @@ const addChoice = () => {
     choiceInput.classname = "choices";
     choiceInput.id = "choiceinput"+addCount;
     choiceInput.placeholder = "enter an input";
-    voteBox.appendChild(choiceInput);
+    inputBox.appendChild(choiceInput);
 }
 
 // the continue button function
@@ -33,21 +34,22 @@ const enter = () => {
 
     for (let i = 1; i <= addCount; i++) {
         const choiceButton = document.createElement('button');
-        const inputLoopVal = 'choiceInput' + i;
-        const inputVal = document.getElementById(`inputLoopVal${i}`)
-        console.log(choiceInput.value);
-        choiceButton.innerHTML = choiceInput.value;
+        // const inputLoopVal = 'choiceInput' + i;
+        const inputVal = document.getElementById(`choiceinput${i}`)
+        // console.log(inputVal);
+        choiceButton.innerHTML = inputVal.value;
         choiceButton.id = `choicebutton`+ i;
         voteBox.appendChild(choiceButton);
-
+        continueBtn.onclick = enter2();
     }
+    inputBox.remove();
     addChoiceBox.remove();
-    continueBtn.remove();
+    // continueBtn.remove();
 }
 
 
 const enter2 = () => {
-
+    console.log("yep");
 }
 
 
