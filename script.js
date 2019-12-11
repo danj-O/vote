@@ -69,7 +69,11 @@ const voteClick = (e) => {
         // debugger;
         voteChosen = e.target.id;
         // peopleCount--;
-        if (peopleCount >= 1){
+        if (peopleCount === 0){
+            console.log(peopleCount);
+            votesLeft.innerHTML = `The votes are in! <button>Click to see results!</button`;
+        }
+        if (peopleCount > 1){
             votesLeft.innerHTML = `Votes Left : ${peopleCount - 1}`;
                 //adding votes to their given counters
             if (voteChosen.includes(1)){
@@ -80,9 +84,7 @@ const voteClick = (e) => {
                 thirdOption++;  
             } else if (voteChosen.includes(4)){
                 fourthOption++;  
-            } else if (peopleCount == 0){
-                votesLeft.innerHTML = `The votes are in! <button></button`;
-            }
+            } 
             // console.log(finalArr);
         } else {        
                     //getting the winner!!!!
@@ -92,7 +94,7 @@ const voteClick = (e) => {
             votesLeft.innerHTML = `Winner ${winningNumberOfVotes + 1}`;
         } 
         peopleCount--;
-        console.log(peopleCount);
+        // console.log(peopleCount);
         console.log(firstOption, secondOption, thirdOption, fourthOption);
         // alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
     }
