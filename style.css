@@ -1,13 +1,60 @@
 body {
+    font-family: monospace;
     color: white;
     background-color: rgb(138, 96, 7);
 }
 #app {
+    margin: 0 10vw;
+    /* text-align: center; */
     background: rgb(1, 93, 155);
 }
 #header {
+    text-align: center;
     background: rgb(80, 45, 1);
+    padding: 20px 20px;
+}
+#header h1 {
+    font-size: 4em;
 }
 #inputstuff {
+    text-align: center;
     background: rgb(7, 139, 128);
+    padding: 20px 20px;
+}
+input {
+    padding: 10px 20px;
+    width: 200px
+}
+#titlebox {
+    font-size: 3em;
+}
+#titlebox.input {
+
+}
+#peoplebox {
+    padding: 10px 20px;
+    font-size: 2em;
+}
+#votesleft {
+    font-size: 2em;
+}
+#addchoicebox {
+
+}
+#addchoicebox button {
+    padding: 10px 20px;
+}
+#votebox {
+    padding: 20px 20px;
+}
+#votebox button {
+    padding: 10px 20px;
+}
+#continuebox {
+    padding: 20px 20px;
+    text-align: center;
+}
+#continuebox button {
+    /* color: green; */
+    padding: 10px 20px;
 }
