@@ -88,6 +88,7 @@ const voteClick = (e) => {
         } else if (voteChosen.includes(4)){
             fourthOption++;  
         } 
-        alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
+        // alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
     }
 }
+// TO DOOOO!!!!! --------> if the voteleft = 0, stop stuff from working, like the alert
