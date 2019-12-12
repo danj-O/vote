@@ -1,16 +1,16 @@
 body {
     font-family: monospace;
     color: white;
-    background-color: rgb(138, 96, 7);
+    background-color:rgb(7, 139, 128);
 }
 #app {
     margin: 0 10vw;
-    /* text-align: center; */
+    padding: 20px 20px;
     background: rgb(1, 93, 155);
 }
 #header {
     text-align: center;
-    background: rgb(1, 80, 37);
+    /* background: rgb(119, 54, 0); */
     padding: 20px 20px;
 }
 #header h1 {
@@ -18,12 +18,18 @@ body {
 }
 #inputstuff {
     text-align: center;
-    background: rgb(7, 139, 128);
+    /* background: rgb(7, 139, 128); */
     padding: 20px 20px;
 }
 input {
     padding: 10px 20px;
-    width: 200px
+    width: 200px;
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px 0px;
+}
+button {
+    border-radius: 15px;
+    box-shadow: 0px 0px 3px 0px;
 }
 #titlebox {
     font-size: 3em;
@@ -56,5 +62,8 @@ input {
 }
 #continuebox button {
     /* color: green; */
+    padding: 10px 20px;
+}
+#resultsBtn {
     padding: 10px 20px;
 }

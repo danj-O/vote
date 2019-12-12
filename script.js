@@ -81,10 +81,12 @@ const voteClick = (e) => {
             } 
         } else {        
                     //getting the winner!!!!
-            const finalArr = [firstOption, secondOption, thirdOption, fourthOption]
-            // console.log(finalArr);
+            const finalArr = [firstOption, secondOption, thirdOption, fourthOption];
+            // if (finalArr[i]) {
+
+            // }
             winningNumberOfVotes = finalArr.indexOf(Math.max(firstOption, secondOption, thirdOption, fourthOption));
-            votesLeft.innerHTML = `<button onclick= "resultsClick()">Click here to see results!</button>`;
+            votesLeft.innerHTML = `<button id="resultsBtn" onclick= "resultsClick()">Click here to see results!</button>`;
         } 
         peopleCount--;
         // alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
