@@ -19,6 +19,12 @@ let peopleCount; //amt of vote options chosen
 let voteCount;
 let voteChosen; // option button pressed's id
 
+let firstOption=0;
+let secondOption=0;
+let thirdOption=0;
+let fourthOption=0;
+// let winningNumberOfVotes;
+
 //adds inputs for vote choices
 const addChoice = () => {
     addCount++;
@@ -42,6 +48,7 @@ const enter = () => {
     for (let i = 1; i <= addCount; i++) {
         const choiceButton = document.createElement('button');
         const inputVal = document.getElementById(`choiceinput${i}`);
+        // choiceButton.data-value = 
         choiceButton.innerHTML = inputVal.value;
         choiceButton.value = inputVal.value;
         choiceButton.id = `choicebutton`+ i;
@@ -57,21 +64,20 @@ const enter = () => {
     votesLeft.appendChild(voteCount);
 }
 
-let firstOption=0;
-let secondOption=0;
-let thirdOption=0;
-let fourthOption=0;
-let winningNumberOfVotes=0;
-
 //click the option buttons
 const voteClick = (e) => {
     if (e.target.tagName == 'BUTTON') {
         voteChosen = e.target.id;
-        if (peopleCount > 1){
-            votesLeft.innerHTML = `Votes Left : ${peopleCount - 1}`;
+        const votesArr = [];
+        peopleCount--;
+        votesLeft.innerHTML = `Votes Left : ${peopleCount}`;
+        if (peopleCount >= 0){
+            if (peopleCount == 0) {
+                votesLeft.innerHTML = `<button id="resultsBtn" onclick= "resultsClick()">Click here to see results!</button>`;
+            }
                 //adding votes to their given counters
             if (voteChosen.includes(1)){
-                firstOption++;  
+                firstOption++;
             } else if (voteChosen.includes(2)){
                 secondOption++;  
             } else if (voteChosen.includes(3)){
@@ -79,26 +85,37 @@ const voteClick = (e) => {
             } else if (voteChosen.includes(4)){
                 fourthOption++;  
             } 
-        } else {        
-                    //getting the winner!!!!
-            const finalArr = [firstOption, secondOption, thirdOption, fourthOption];
-            // if (finalArr[i]) {
+        } else if (peopleCount < 0){
+            peopleCount = 0;
+        }
+        votesArr.push(firstOption, secondOption, thirdOption, fourthOption);
+        let sortedVotesArr = [firstOption, secondOption, thirdOption, fourthOption];
+        sortedVotesArr = sortedVotesArr.sort();//sorts lowest to highest
+        console.log('votes ar', votesArr);
+        console.log('sorted votes array',sortedVotesArr);
+        const indexOfWinner = votesArr.length //gets last item in array
+        const winVoteAmt = votesArr.pop(); // won with this many votes
+        let winnerIndex;
 
-            // }
-            winningNumberOfVotes = finalArr.indexOf(Math.max(firstOption, secondOption, thirdOption, fourthOption));
-            votesLeft.innerHTML = `<button id="resultsBtn" onclick= "resultsClick()">Click here to see results!</button>`;
-        } 
-        peopleCount--;
+        console.log('people count', peopleCount);
         // alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
     }
 }
 // TO DOOOO!!!!! --------> if the voteleft = 0, stop stuff from working, like the alert
 const resultsClick = () => {
-    const winner = document.getElementById(`${voteChosen}`);
-    const winnerest = winner.value;
+    // const winner = document.getElementById(`${winningNumberOfVotes}`);
+    // const winnerest = winner.value;
+    // console.log('w n of v last', winningNumberOfVotes);
+    // console.log('winner', winner);
     peopleBox.remove();
-    votesLeft.innerHTML = `The winner is : ${winnerest}!!`;
+    // votesLeft.innerHTML = `The winner is : ${winnerest}!!`;
 }
+
+
+
+// body.innerHTML = "<button data-value="1" id="something">button</button>";
+
+
 
 
 
