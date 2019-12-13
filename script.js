@@ -19,10 +19,11 @@ let peopleCount; //amt of vote options chosen
 let voteCount;
 let voteChosen; // option button pressed's id
 
-let firstOption=0;
-let secondOption=0;
-let thirdOption=0;
-let fourthOption=0;
+let firstOption='';
+let secondOption='';
+let thirdOption='';
+let fourthOption= '';
+let fifthOption= '';
 
 let winVoteAmt = 0;
 let votesArr = [];
@@ -72,7 +73,7 @@ const enter = () => {
 const voteClick = (e) => {
     if (e.target.tagName == 'BUTTON') {
         voteChosen = e.target.id;
-        // const votesArr = [];
+        // const votesArr = [0, 0, 0, 0];
         peopleCount--;
         votesLeft.innerHTML = `Votes Left : ${peopleCount}`;
         if (peopleCount >= 0){
@@ -85,16 +86,14 @@ const voteClick = (e) => {
                 thirdOption++;  
             } else if (voteChosen.includes(4)){
                 fourthOption++;  
+            } else if (voteChosen.includes(5)){
+                fifthOption++;  
             } 
         }
         if (peopleCount == 0){
-            votesArr.push(firstOption, secondOption, thirdOption, fourthOption);
+            votesArr.push(firstOption, secondOption, thirdOption, fourthOption, fifthOption);
             votesLeft.innerHTML = `<button id="resultsBtn" onclick= "findNumInArr()">Click here to see results!</button>`;
-            // let tempSortedVotesArr = [firstOption, secondOption, thirdOption, fourthOption];
-            // let sortedVotesArr = tempSortedVotesArr.sort();//sorts lowest to highest
             console.log('votes ar', votesArr);
-            // console.log(votesArr.sort());
-            // let winVoteAmt = sortedVotesArr.pop(); // won with this many votes
         } else if (peopleCount < 0){
             peopleCount = null;
         }          
@@ -112,6 +111,7 @@ const findNumInArr = () => {
     console.log('before',votesArr);
     const sortedVotesArr = votesArr.sort();
     const winVoteAmt = sortedVotesArr.pop();
+    const winVoteAmt2 = sortedVotesArr.pop();
     // const winVoteAmt = votesArr.slice(-1);
     console.log('yep');
     console.log('copy',votesArrCopy);
@@ -123,9 +123,16 @@ const findNumInArr = () => {
             const woo = document.getElementById(`choicebutton${i+1}`);
             console.log(woo);
             const winningOption = woo.value;
-            console.log(winningOption);
-            peopleBox.innerHTML = `The winner is ${winningOption}`;
-            votesLeft.remove();
+            if (votesArrCopy[i] !== winVoteAmt2){
+                console.log('win op 1',winningOption);
+                peopleBox.innerHTML = `The winner is ${winningOption}`;
+                votesLeft.remove();
+            } else if (votesArrCopy[i] == winVoteAmt2){
+            const woo2 = document.getElementById(`choicebutton${i+1}`);
+            const winningOption2 = woo2.value;
+            console.log('win op 2',winningOption2);
+            peopleBox.innerHTML = `We have a tie!`;
+            }
         }
     }
 }
