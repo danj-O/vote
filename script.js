@@ -77,8 +77,9 @@ const voteClick = (e) => {
         voteChosen = e.target.id;
         // const votesArr = [0, 0, 0, 0];
         peopleCount--;
-        votesLeft.innerHTML = `Votes Left : ${peopleCount}`;
+        
         if (peopleCount >= 0){
+            votesLeft.innerHTML = `Votes Left : ${peopleCount}`;
                 //adding votes to their given counters
             if (voteChosen.includes(1)){
                 firstOption++;
@@ -95,6 +96,8 @@ const voteClick = (e) => {
         if (peopleCount == 0){
             votesArr.push(firstOption, secondOption, thirdOption, fourthOption, fifthOption);
             votesLeft.innerHTML = `<button id="resultsBtn" onclick= "findNumInArr()">Click here to see results!</button>`;
+            // document.getElementsByClassName('choicebtn').disabled = true;
+            peopleCount = null;
             // console.log('votes ar', votesArr);
         } else if (peopleCount < 0){
             peopleCount = null;
