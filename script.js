@@ -92,13 +92,9 @@ const voteClick = (e) => {
     }
 }
 
-
-
-// TO DOOOO!!!!! --------> if the voteleft = 0, stop stuff from working, like the alert
 const findNumInArr = () => {
     const votesArrLen = votesArr.length;
     const votesArrCopy = votesArr.slice(0);
-    // console.log('before',votesArr);
     const sortedVotesArr = votesArr.sort();
     const winVoteAmt = sortedVotesArr.slice(-1);
     sortedVotesArr.pop();
@@ -119,7 +115,8 @@ const findNumInArr = () => {
                 inputStuff.appendChild(winner);
             }
         } 
-    }votesLeft.remove();
+    }
+    votesLeft.remove();
     voteBox.remove();
 } 
 
