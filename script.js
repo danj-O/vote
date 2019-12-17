@@ -37,7 +37,7 @@ const addChoice = () => {
     choiceInput = document.createElement("input");
     choiceInput.classname = "choices";
     choiceInput.id = "choiceinput"+addCount;
-    choiceInput.placeholder = "enter an input";
+    choiceInput.placeholder = "enter an option";
     inputBox.appendChild(choiceInput);
 }
 
