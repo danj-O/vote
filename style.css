@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
 body {
     font-family: monospace;
     color: white;
@@ -10,11 +11,16 @@ body {
 }
 #header {
     text-align: center;
-    /* background: rgb(119, 54, 0); */
+    background: rgb(139, 63, 0);
     padding: 20px 20px;
 }
 #header h1 {
     font-size: 3em;
+    border: solid white;
+    padding: 15px 0px;
+}
+#header h2 {
+    font-size: 1em;
 }
 #inputstuff {
     text-align: center;
@@ -35,8 +41,8 @@ button {
 #titlebox {
     font-size: 3em;
 }
-#titlebox.input {
-
+#titlebox input {
+    /* background: ; */
 }
 #peoplebox {
     padding: 10px 20px;
