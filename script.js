@@ -147,6 +147,7 @@ const findNumInArr = () => {
                 peopleBox.innerHTML = `We have a tie!`;
                 const winner = document.createElement('div');
                 winner.innerHTML = `${winningOption2}`;
+                winner.className = 'winner';
                 inputStuff.appendChild(winner);
             }
         } 

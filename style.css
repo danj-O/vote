@@ -71,3 +71,6 @@ button {
 #resultsBtn {
     padding: 10px 20px;
 }
+.winner {
+    font-size: 3em;
+}
