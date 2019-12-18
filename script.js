@@ -57,7 +57,7 @@ const enter = () => {
     addChoiceBox.remove();
     continueBtn.remove();
     // Votes left counter init
-    voteCount = document.createTextNode(`Votes Left : ${peopleCount}`)
+    voteCount = document.createTextNode(`Votes Left (click an option to vote) : ${peopleCount}`)
     votesLeft.appendChild(voteCount);
 }
 
@@ -67,7 +67,8 @@ const voteClick = (e) => {
         voteChosen = e.target.id;
         peopleCount--;
         if (peopleCount >= 0){
-            votesLeft.innerHTML = `Votes Left : ${peopleCount}`;
+            alert("NEXT! PASS THE PHONE!");  //SEND ALERT B/W VOTERS TURNS
+            votesLeft.innerHTML = `Votes Left (click an option to vote) : ${peopleCount}`;
                 //adding votes to their given counters
             if (voteChosen.includes(1)){
                 firstOption++;
