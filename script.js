@@ -36,29 +36,33 @@ const addChoice = () => {
 
 // the continue button function
 const enter = () => {
-    const x = title.value;
-    titleBox.innerHTML = x;
-    //takes amt of ppl and makes it viewable
-    peopleCount = people.value;
-    peopleBox.innerHTML = "Debaters " + peopleCount;
+    if (title.value == '' || people.value == ''){
+        alert('Enter stuff in the correct fields')
+    }else {
+        const x = title.value;
+        titleBox.innerHTML = x;
+        //takes amt of ppl and makes it viewable
+        peopleCount = people.value;
+        peopleBox.innerHTML = "Debaters " + peopleCount;
 
-    //takes input and puts on buttons
-    for (let i = 1; i <= addCount; i++) {
-        const choiceButton = document.createElement('button');
-        const inputVal = document.getElementById(`choiceinput${i}`);
-        choiceButton.innerHTML = inputVal.value;
-        choiceButton.className = 'choicebtn';
-        choiceButton.value = inputVal.value;
-        choiceButton.id = `choicebutton`+ i;
-        choiceButton.onclick = voteClick;
-        voteBox.appendChild(choiceButton);
+        //takes input and puts on buttons
+        for (let i = 1; i <= addCount; i++) {
+            const choiceButton = document.createElement('button');
+            const inputVal = document.getElementById(`choiceinput${i}`);
+            choiceButton.innerHTML = inputVal.value;
+            choiceButton.className = 'choicebtn';
+            choiceButton.value = inputVal.value;
+            choiceButton.id = `choicebutton`+ i;
+            choiceButton.onclick = voteClick;
+            voteBox.appendChild(choiceButton);
+        }
+        inputBox.remove();
+        addChoiceBox.remove();
+        continueBtn.remove();
+        // Votes left counter init
+        voteCount = document.createTextNode(`Votes Left (click an option to vote) : ${peopleCount}`)
+        votesLeft.appendChild(voteCount);
     }
-    inputBox.remove();
-    addChoiceBox.remove();
-    continueBtn.remove();
-    // Votes left counter init
-    voteCount = document.createTextNode(`Votes Left (click an option to vote) : ${peopleCount}`)
-    votesLeft.appendChild(voteCount);
 }
 
 //click the option buttons
