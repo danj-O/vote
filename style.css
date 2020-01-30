@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css?family=Lilita+One&display=swap');
+body {
+    font-family: monospace;
+    color: white;
+    background-color:rgb(0, 21, 31);
+}
+#app {
+    border-radius: 10px;
+    margin: 0;
+    /* padding: 20px 20px; */
+    background: rgb(0, 99, 145);
+}
+#header {
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+    text-align: center;
+    background: rgb(0, 66, 97);
+    padding: 20px 20px;
+}
+#header h1 {
+    font-size: 3em;
+    border: solid rgb(0, 99, 145);
+    border-width: 4px;
+    border-radius: 10px;
+    padding: 15px 0px;
+}
+#header h2 {
+    font-size: 1em;
+}
+#inputstuff {
+    text-align: center;
+    /* background: rgb(0, 131, 192); */
+    padding: 20px 10px;
+}
+input {
+    padding: 10px 20px;
+    width: 200px;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 3px 0px; */
+}
+button {
+    background: rgb(255, 255, 255);
+    border-radius: 20px;
+    box-shadow: 0px 0px 3px 0px;
+    border-color: white;
+    margin: 0px 5px;
+}
+#titlebox {
+    font-size: 3em;
+}
+#titlebox input {
+    /* background: ; */
+}
+#peoplebox {
+    padding: 10px 20px;
+    font-size: 2em;
+}
+#votesleft {
+    font-size: 2em;
+}
+#addchoicebox {
+
+}
+#addchoicebox button {
+    padding: 10px 20px;
+}
+#votebox {
+    padding: 20px 20px;
+}
+#votebox button {
+    padding: 10px 20px;
+} 
+#continuebox {
+    padding: 20px 20px;
+    text-align: center;
+}
+#continuebox button {
+    /* color: green; */
+    padding: 10px 20px;
+}
+/* .choicebtn {
+    background: #000;
+} */
+#resultsBtn {
+    padding: 10px 20px;
+}
+.winner {
+    font-size: 3em;
+}
+.choicebtn {
+    padding: 50px;
+} 
